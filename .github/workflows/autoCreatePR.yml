@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+    - 'develop'
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "master"                      # If blank, default: master
+        pr_title: "Pulling ${{ github.ref }} into master" # Title of pull request
+        pr_body: ":crown: *An automated PR*"              # Full markdown support, requires pr_title to be set
+        pr_reviewer: "Kanna727"                         # Comma-separated list (no spaces)
+        pr_assignee: "Kanna727"                         # Comma-separated list (no spaces)
+        pr_label: "auto-pr"                               # Comma-separated list (no spaces)
+        github_token: ${{ secrets.GITHUB_TOKEN }}
