@@ -21,3 +21,11 @@ func TestValues(t *testing.T) {
 		t.Errorf("Values() = %v, expected %v", actual, expected)
 	}
 }
+
+func TestVariables(t *testing.T) {
+	expected := "initial 1 2 true 0\n"
+	actual := utils.GetConsoleOutput(src.Variables)
+	if actual != expected {
+		t.Errorf("Values() = %v, expected %v", actual, expected)
+	}
+}
