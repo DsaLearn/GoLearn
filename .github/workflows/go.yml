@@ -1,7 +1,11 @@
-name: Go
+name: Tests
 
 on:
   pull_request:
+  workflow_run:
+    workflows: ['AutoPR']
+    types:
+      - completed
 
 jobs:
   test:
