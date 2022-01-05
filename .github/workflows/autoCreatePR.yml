@@ -22,6 +22,7 @@ jobs:
         pr_label: "auto-pr"                               # Comma-separated list (no spaces)
         github_token: ${{ secrets.MY_PAT }}
     - name: Enable Auto Merge
+      if: ${{steps.open-pr.outputs.pr_url}}
       run: gh pr merge --auto --merge "${{steps.open-pr.outputs.pr_url}}"
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
