@@ -19,4 +19,4 @@ jobs:
         pr_body: ":crown: *An automated PR*"              # Full markdown support, requires pr_title to be set
         pr_assignee: "Kanna727"                         # Comma-separated list (no spaces)
         pr_label: "auto-pr"                               # Comma-separated list (no spaces)
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.MY_PAT }}
