@@ -29,3 +29,19 @@ func TestVariables(t *testing.T) {
 		t.Errorf("Variables() = %v, expected %v", actual, expected)
 	}
 }
+
+func TestConstans(t *testing.T) {
+	expected := "constant\n6e+11\n600000000000\n-0.28470407323754404\n"
+	actual := utils.GetConsoleOutput(src.Constants)
+	if actual != expected {
+		t.Errorf("Constants() = %v, expected %v", actual, expected)
+	}
+}
+
+func TestFor(t *testing.T) {
+	expected := "1\n2\n3\n7\n8\n9\nloop\n1\n3\n5\n"
+	actual := utils.GetConsoleOutput(src.For)
+	if actual != expected {
+		t.Errorf("For() = %v, expected %v", actual, expected)
+	}
+}
